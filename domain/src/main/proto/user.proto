@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.juliencrestin.domain";
+
+package user;
+
+service BlockedUserService {
+  rpc BlockUser (UserRequest) returns (UserResponse) {
+
+  }
+  rpc IsUserBlocked (UserRequest) returns (UserResponse) {}
+}
+
+message UserRequest {
+  string id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  bool isBlocked = 2;
+}
