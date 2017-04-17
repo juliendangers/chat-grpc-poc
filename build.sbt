@@ -17,6 +17,21 @@ lazy val `blocked-user-service` = project
     )
   )
 
+lazy val `chat-grpc-server` = project
+  .dependsOn(domain)
+  .settings(commonSettings)
+  .settings(
+    name := "chat-grpc-server",
+    version := "0.1.0-SNAPSHOT",
+    libraryDependencies ++= Seq(
+      log4jApi,
+      log4jCore,
+      log4jSlf4jImpl,
+      typesafeConfig,
+      scalaTest % Test
+    )
+  )
+
 lazy val domain = project
   .settings(pbSettings)
   .settings(commonSettings)
