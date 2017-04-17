@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.juliencrestin.domain";
+
+package chat;
+
+service ChatService {
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage) {}
+}
+
+message ChatMessage {
+  string name = 1;
+  string content = 2;
+  enum ChatMessageType {
+    CHAT = 0;
+    ERROR = 1;
+  }
+  ChatMessageType type = 3;
+}
