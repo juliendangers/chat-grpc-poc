@@ -1,6 +1,6 @@
 # Scala gRPC
 
-POC of gRPC with Scala language
+POC of gRPC with Scala & NodeJS languages
 
 ## Requirements
 
@@ -11,7 +11,7 @@ POC of gRPC with Scala language
 
 ### Generate code from protobuf files
 
-run the following commands
+Run the following commands:
 
 ```
 sbt
@@ -19,15 +19,34 @@ project domain
 compile
 ```
 
+_(Running the client or the server will generate sources too)_
+
 ### Run Server
 
-run the following commands
+Run the following commands:
 
 ```
 sbt
 project chat-grpc-server
 run
 ```
+
+### Run Scala Client
+
+Ensure server is running.
+Then run the following commands:
+
+```
+sbt
+project chat-grpc-client
+run
+```
+
+you can run multiple Java clients simultaneously
+
+### Run Electron Client
+
+See dedicated README
 
 ## Reason
 
