@@ -32,6 +32,21 @@ lazy val `chat-grpc-server` = project
     )
   )
 
+lazy val `chat-grpc-client` = project
+  .dependsOn(domain)
+  .settings(commonSettings)
+  .settings(
+    name := "chat-grpc-client",
+    version := "0.1.0-SNAPSHOT",
+    libraryDependencies ++= Seq(
+      log4jApi,
+      log4jCore,
+      log4jSlf4jImpl,
+      typesafeConfig,
+      scalaFX
+    )
+  )
+
 lazy val domain = project
   .settings(pbSettings)
   .settings(commonSettings)
