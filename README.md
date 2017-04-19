@@ -2,6 +2,8 @@
 
 POC of gRPC with Scala & NodeJS languages
 
+Simple chat service using bi-directional streaming
+
 ## Requirements
 
  * [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -50,7 +52,7 @@ See dedicated README
 
 ## Reason
 
-Have a closer look to gRPC:
+Have a closer look at gRPC:
 
  * Validate ease of use
  * Validate cross languages code generation
