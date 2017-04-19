@@ -1,0 +1,6 @@
+{
+  "name": "electron-grpc-chat",
+  "version": "1.0.0",
+  "description": "A minimal Electron chat using gRPC",
+  "main": "main.js"
+}

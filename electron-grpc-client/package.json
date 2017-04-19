@@ -1,0 +1,40 @@
+{
+  "name": "electron-grpc-client",
+  "version": "0.0.1",
+  "description": "Node gRPC client",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-bindonce-publish-fork": "0.3.3",
+    "angular-bootstrap": "0.12.2",
+    "angular-ui-router": "0.3.2",
+    "bootstrap": "3.3.7",
+    "google-protobuf": "^3.2.0",
+    "jquery": "2.2.4",
+    "less": "^2.7.2",
+    "lodash": "3.x.x",
+    "uuid": "^3.0.1"
+  },
+  "engines": {
+    "node": "6"
+  },
+  "scripts": {
+    "test": "mocha 'src/**/*.spec.js'",
+    "start": "electron ./src/",
+    "postinstall": "./node_modules/.bin/electron-rebuild && ./node_modules/.bin/gulp"
+  },
+  "author": "Julien Crestin",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "electron": "1.6.x",
+    "electron-rebuild": "^1.5.7",
+    "grpc": "^1.2.4",
+    "grpc-tools": "^1.2.4",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.8",
+    "mocha": "^3.2.0"
+  }
+}

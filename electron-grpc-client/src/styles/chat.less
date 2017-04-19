@@ -1,0 +1,35 @@
+#grpc {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .error {
+    text-align: center;
+  }
+  .header {
+    font-family: Pacifico;
+    font-size: 3em;
+    background: #2C2C2C;
+    color: #fff;
+    padding: 10px;
+    height: 80px;
+  }
+  .chat-wrapper {
+    height: ~"calc(100% - 80px)";
+  }
+  .grpc-chat {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    overflow-y: hidden;
+    height: 100%;
+  }
+
+  .conversation-content {
+    /**margin-left: 185px;**/
+    .messages .state-loading-small {
+      width:100%;
+    }
+  }
+}
+

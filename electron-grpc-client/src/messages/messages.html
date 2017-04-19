@@ -1,0 +1,36 @@
+<div class="conversation-content conversation-element">
+    <div class="content-header">
+        <div class="title">
+            <h3>Messages</h3>
+        </div>
+    </div>
+    <div class="content-body">
+        <div class="messages-list">
+            <div
+                    ng-repeat="message in MessagesCtrl.messages track by $index"
+                    class="message"
+                    bindonce>
+                <div class="author">
+                    <img width="50" src="https://api.adorable.io/avatars/50/{{message.getName()}}" alt="{{message.getName()}}"/>
+                </div>
+                <div class="content">
+                    <span bo-text="message.getContent()"></span>
+                </div>
+            </div>
+        </div>
+        <div class="messages-add">
+            <div class="input-group">
+                <input ng-model="MessagesCtrl.input"
+                       ng-value="name"
+                       ng-keypress="($event.which === 13)?MessagesCtrl.add():0"
+                       id="{{name}}"
+                       type="text"
+                       class="form-control"
+                       placeholder="..."/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="MessagesCtrl.add()" scroll-bottom scroll-class=".messages-list" scroll-elements="MessagesCtrl.messages">Envoyer !</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

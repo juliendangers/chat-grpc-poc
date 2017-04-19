@@ -1,0 +1,60 @@
+@import "variables";
+
+#grpc {
+  a:hover {
+    text-decoration: none;
+  }
+  .conversation-content {
+    border-left: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 12;
+    .content-header {
+      height: @headerHeight;
+      background: @backgroundColor;
+      .title {
+        margin: 0 20px;
+        h3 {
+          margin-top: 10px;
+        }
+      }
+
+    }
+    .content-body {
+      overflow: scroll;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .messages-list {
+        flex-grow: 7;
+        flex-shrink: 1;
+        flex-basis: auto;
+        overflow: auto;
+        margin-bottom: @headerHeight;
+        .message {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: row;
+          margin: 10px;
+          .content {
+            margin-left: 10px;
+            span {
+              padding-top: 10px;
+              display: block;
+            }
+          }
+        }
+      }
+      .messages-add {
+        height: @headerHeight;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        position: absolute;
+        bottom: 0;
+        padding: 3px 10px;
+        background: #fff;
+      }
+    }
+  }
+}

@@ -62,6 +62,21 @@ lazy val `web-grpc-client` = project
     )
   )
 
+lazy val `electron-grpc-client` = project
+  .dependsOn(domain)
+  .settings(commonSettings)
+  .settings(
+    name := "electron-grpc-client",
+    version := "0.1.0-SNAPSHOT",
+    libraryDependencies ++= Seq(
+      log4jApi,
+      log4jCore,
+      log4jSlf4jImpl,
+      typesafeConfig,
+      akkaHttp
+    )
+  )
+
 lazy val domain = project
   .settings(pbSettings)
   .settings(commonSettings)
