@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="gRPC" bindonce>
+<head>
+  <title>gRPC chat</title>
+  <base href="/">
+  <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+
+  <link rel="stylesheet" media="all" href="public/css/style.css" />
+
+</head>
+<body ng-controller="AppCtrl" bindonce>
+
+<!-- container -->
+<div id="grpc" class="flex-container">
+  <div class="header">Chat</div>
+  <div ui-view autoscroll="false" class="chat-wrapper"></div>
+</div>
+
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<script type="text/javascript" src="public/js/grpc.js"></script>
+
+</body>
+</html>

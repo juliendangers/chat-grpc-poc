@@ -9,6 +9,8 @@ object Dependencies {
     val log4j = "2.8"
     val typesafeConfig = "1.3.1"
     val scalaFX = "8.0.102-R11"
+    val akka = "2.5.0"
+    val akkaHttp = "10.0.5"
   }
 
   lazy val scalaTest = "org.scalatest" %% "scalatest" % Version.scalaTest
@@ -20,4 +22,5 @@ object Dependencies {
   val log4jSlf4jImpl = "org.apache.logging.log4j" % "log4j-slf4j-impl" % Version.log4j
   val typesafeConfig = "com.typesafe" % "config" % Version.typesafeConfig
   val scalaFX = "org.scalafx" %% "scalafx" % Version.scalaFX
+  val akkaHttp = "com.typesafe.akka" %% "akka-http" % Version.akkaHttp
 }
