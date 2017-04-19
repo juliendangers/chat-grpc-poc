@@ -2,21 +2,6 @@ import Dependencies._
 
 lazy val root = project.in(file("."))
 
-lazy val `blocked-user-service` = project
-  .dependsOn(domain)
-  .settings(commonSettings)
-  .settings(
-    name := "blocked-user-service",
-    version := "0.1.0-SNAPSHOT",
-    libraryDependencies ++= Seq(
-      log4jApi,
-      log4jCore,
-      log4jSlf4jImpl,
-      typesafeConfig,
-      scalaTest % Test
-    )
-  )
-
 lazy val `chat-grpc-server` = project
   .dependsOn(domain)
   .settings(commonSettings)
@@ -52,21 +37,6 @@ lazy val `web-grpc-client` = project
   .settings(commonSettings)
   .settings(
     name := "web-grpc-client",
-    version := "0.1.0-SNAPSHOT",
-    libraryDependencies ++= Seq(
-      log4jApi,
-      log4jCore,
-      log4jSlf4jImpl,
-      typesafeConfig,
-      akkaHttp
-    )
-  )
-
-lazy val `electron-grpc-client` = project
-  .dependsOn(domain)
-  .settings(commonSettings)
-  .settings(
-    name := "electron-grpc-client",
     version := "0.1.0-SNAPSHOT",
     libraryDependencies ++= Seq(
       log4jApi,
