@@ -1,0 +1,150 @@
+syntax = "proto3";
+
+package whatsapp;
+
+option java_package = "com.whatsapp.proto";
+
+message Message {
+  message SenderKeyDistributionMessage {
+    string group_id = 1;
+    bytes axolotl_sender_key_distribution_message = 2;
+  }
+  message ImageMessage {
+    string url = 1;
+    string mimetype = 2;
+    string caption = 3;
+    bytes file_sha256 = 4;
+    uint64 file_length = 5;
+    uint32 height = 6;
+    uint32 width = 7;
+    bytes media_key = 8;
+    bytes jpeg_thumbnail = 16;
+    ContextInfo context_info = 17;
+  }
+  message ContactMessage {
+    string display_name = 1;
+    string vcard = 16;
+    ContextInfo context_info = 17;
+  }
+  message LocationMessage {
+    double degrees_latitude = 1;
+    double degrees_longitude = 2;
+    string name = 3;
+    string address = 4;
+    string url = 5;
+    bytes jpeg_thumbnail = 16;
+    ContextInfo context_info = 17;
+  }
+  message ExtendedTextMessage {
+    string text = 1;
+    string matched_text = 2;
+    string canonical_url = 4;
+    string description = 5;
+    string title = 6;
+    bytes jpeg_thumbnail = 16;
+    ContextInfo context_info = 17;
+  }
+  message DocumentMessage {
+    string url = 1;
+    string mimetype = 2;
+    string title = 3;
+    bytes file_sha256 = 4;
+    uint64 file_length = 5;
+    uint32 page_count = 6;
+    bytes media_key = 7;
+    string file_name = 8;
+    bytes jpeg_thumbnail = 16;
+    ContextInfo context_info = 17;
+  }
+  message AudioMessage {
+    string url = 1;
+    string mimetype = 2;
+    bytes file_sha256 = 3;
+    uint64 file_length = 4;
+    uint32 seconds = 5;
+    bool ptt = 6;
+    bytes media_key = 7;
+    ContextInfo context_info = 17;
+    bytes streaming_sidecar = 18;
+  }
+  message VideoMessage {
+    enum Attribution {
+      NONE = 0;
+      GIPHY = 1;
+      TENOR = 2;
+    }
+    string url = 1;
+    string mimetype = 2;
+    bytes file_sha256 = 3;
+    uint64 file_length = 4;
+    uint32 seconds = 5;
+    bytes media_key = 6;
+    string caption = 7;
+    bool gif_playback = 8;
+    bytes jpeg_thumbnail = 16;
+    ContextInfo context_info = 17;
+    bytes streaming_sidecar = 18;
+    Attribution gif_attribution = 19;
+  }
+  message Call {
+    bytes call_key = 1;
+  }
+  message Chat {
+    string display_name = 1;
+    string id = 2;
+  }
+  message ProtocolMessage {
+  }
+  message ContactsArrayMessage {
+    string display_name = 1;
+    repeated ContactMessage contacts = 2;
+    ContextInfo context_info = 17;
+  }
+  string conversation = 1;
+  SenderKeyDistributionMessage sender_key_distribution_message = 2;
+  ImageMessage image_message = 3;
+  ContactMessage contact_message = 4;
+  LocationMessage location_message = 5;
+  ExtendedTextMessage extended_text_message = 6;
+  DocumentMessage document_message = 7;
+  AudioMessage audio_message = 8;
+  VideoMessage video_message = 9;
+  Call call = 10;
+  Chat chat = 11;
+  ProtocolMessage protocol_message = 12;
+  ContactsArrayMessage contacts_array_message = 13;
+}
+
+message ContextInfo {
+  string stanza_id = 1;
+  string participant = 2;
+  Message quoted_message = 3;
+  repeated string mentioned_jid = 15;
+}
+
+message WebMessageInfo {
+  enum Status {
+    ERROR = 0;
+    PENDING = 1;
+    SERVER_ACK = 2;
+    DELIVERY_ACK = 3;
+    READ = 4;
+    PLAYED = 5;
+  }
+  message MessageKey {
+    string remote_jid = 1;
+    bool from_me = 2;
+    string id = 3;
+    string participant = 4;
+  }
+  MessageKey key = 1;
+  Message message = 2;
+  uint64 message_timestamp = 3;
+  Status status = 4;
+  string participant = 5;
+  bool ignore = 16;
+  bool starred = 17;
+  bool broadcast = 18;
+  string push_name = 19;
+  bytes media_ciphertext_sha256 = 20;
+}
